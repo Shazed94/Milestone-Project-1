@@ -85,6 +85,7 @@ function getRandomquote(quotes) {
 function printquote(key) {
   console.log(quotes[key]);
 }
+
 /***
  * click event listener for the print quote button
  ***/
@@ -125,3 +126,16 @@ document.querySelector("button").addEventListener("click", function () {
   i = i < color.length ? ++i : 0;
   document.querySelector("body").style.background = color[i];
 });
+
+setInterval(myTimer, 5000);
+
+function myTimer() {
+  const quoteBox = document.getElementsByClassName("quote-box")[0];
+  quoteBox.getElementsByClassName("quote")[0].innerHTML =
+    getRandomquote(quotes).quote;
+
+  quoteBox.getElementsByClassName("source")[0].innerHTML =
+    value.source +
+    `<span class="citation">${value.citation}</span>` +
+    `<span class="year"> ${value.year}</span>`;
+}
