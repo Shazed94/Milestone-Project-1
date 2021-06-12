@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@800&family=Libre+Baskerville&display=swap');
+
+html {
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 body {
   /* background-color: rgb(36, 184, 80); */
   background-image: linear-gradient(to bottom left, rgba(25, 40, 255, 0.8), rgb(255, 25, 25, 1));
   background-size: auto;
-  background-repeat: no-repeat;
   color: white;
   font-family: "Playfair Display", serif;
   padding: 5px;
@@ -21,6 +30,7 @@ header {
 }
 
 h1 {
+  font-family: 'Libre Baskerville', serif;
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
 }
 

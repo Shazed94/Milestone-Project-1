@@ -72,6 +72,24 @@ const quotes = [
     year: 1992,
   },
 ];
+
+const color = [
+  "#df2020",
+  "#d51de2",
+  "#5d0ef1",
+  "#3d5cf5",
+  "#0bb1da",
+  "#B361D2",
+  "#f87e20",
+  "#c20a0a",
+];
+
+let i = 0;
+document.querySelector("button").addEventListener("click", function () {
+  i = i < color.length ? ++i : 0;
+  document.querySelector("body").style.background = color[i];
+});
+
 // * `getRandomquote` function
 function getRandomquote(quotes) {
   for (let key in quotes) {
@@ -84,6 +102,20 @@ function getRandomquote(quotes) {
 
 function printquote(key) {
   console.log(quotes[key]);
+}
+
+function myTimer() {
+  const quoteBox = document.getElementsByClassName("quote-box")[0];
+  quoteBox.getElementsByClassName("quote")[0].innerHTML =
+    getRandomquote(quotes).quote;
+
+  quoteBox.getElementsByClassName("source")[0].innerHTML =
+    value.source +
+    `<span class="citation">${value.citation}</span>` +
+    `<span class="year"> ${value.year}</span>`;
+
+  i = i < color.length ? ++i : 0;
+  document.querySelector("body").style.background = color[i];
 }
 
 /***
@@ -111,31 +143,4 @@ quoteBtn.addEventListener("click", function (event) {
     `<span class="year"> ${value.year}</span>`;
 });
 
-const color = [
-  "#df2020",
-  "#d51de2",
-  "#5d0ef1",
-  "#3d5cf5",
-  "#0bb1da",
-  "#B361D2",
-  "#f87e20",
-  "#c20a0a",
-];
-let i = 0;
-document.querySelector("button").addEventListener("click", function () {
-  i = i < color.length ? ++i : 0;
-  document.querySelector("body").style.background = color[i];
-});
-
-setInterval(myTimer, 5000);
-
-function myTimer() {
-  const quoteBox = document.getElementsByClassName("quote-box")[0];
-  quoteBox.getElementsByClassName("quote")[0].innerHTML =
-    getRandomquote(quotes).quote;
-
-  quoteBox.getElementsByClassName("source")[0].innerHTML =
-    value.source +
-    `<span class="citation">${value.citation}</span>` +
-    `<span class="year"> ${value.year}</span>`;
-}
+setInterval(myTimer, 7000);
